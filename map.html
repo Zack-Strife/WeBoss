@@ -20,11 +20,12 @@
 	</div>
 	<script>
       function initMap() {
-        var chicago = {lat: 41.85, lng: -87.65};
+        var stlouis = {lat: 38.627003, lng: -90.199402};
+        var bloomington = {location:{lat: 39.1652778, lng: -86.5263889}};
         var indianapolis = {lat: 39.79, lng: -86.14};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: chicago,
+          center: stlouis,
           scrollwheel: false,
           zoom: 7
         });
@@ -36,7 +37,8 @@
         // Set destination, origin and travel mode.
         var request = {
           destination: indianapolis,
-          origin: chicago,
+          origin: stlouis,
+          waypoints: [bloomington],
           travelMode: 'DRIVING'
         };
 
