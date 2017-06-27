@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     $('#calendar').fullCalendar({
 		defaultView: 'basicWeek',
-		editable: true
+		editable: false
     })
 
     updateCalendar();
@@ -96,6 +96,8 @@ function updateCalendar(){
 	$('#calendar').fullCalendar('removeEvents');
 
 	var events = JSON.parse(localStorage.getItem('events'));
+	if (events == null)
+		return false
 	events.forEach(function(event){
 		$('#calendar').fullCalendar('renderEvent', event, true);
 	})

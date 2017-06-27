@@ -26,10 +26,34 @@
         var bloomington = {location:{lat: 39.1652778, lng: -86.5263889}};
         var indianapolis = {lat: 39.79, lng: -86.14};
 
-        /*var events = JSON.parse(localStorage.getItem('events'));
-		events.forEach(function(event){
-			$('#calendar').fullCalendar('renderEvent', event, true);
-		})*/
+        var events = JSON.parse(localStorage.getItem('events'));
+
+        var origin = null;
+        var destination = null;
+    	var waypoints = [];
+        if (events != null){
+        	var now = new Date();
+        // On ne garde que les évènements du jour
+		events.filter(function(item){
+			return now.getHours() == new Date(item.start).getHours()
+				&& now.getMonth() == new Date(item.start).getMonth()
+				&& now.getYear() == new Date(item.start).getYear()
+			})
+
+			// On met les évènements dans l'ordre
+			events.sort(function(a,b){
+			  	return new Date(b.start) < new Date(a.start);
+			});
+
+			origin = events[0].location;
+			destination = events[events.length - 1].location;
+			events.splice(0, 1);
+			events.splice()
+
+			events.forEach(function(event){
+				waypoints.push({location: event.location})
+			})
+        }
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: stlouis,
@@ -44,9 +68,9 @@
 
         // Set destination, origin and travel mode.
         var request = {
-          destination: indianapolis,
-          origin: stlouis,
-          waypoints: [bloomington],
+          destination: destination,
+          origin: origin,
+          waypoints: waypoints,
           travelMode: 'DRIVING'
         };
 
