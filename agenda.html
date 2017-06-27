@@ -85,6 +85,8 @@ function updateCalendar(){
 	$('#calendar').fullCalendar('removeEvents');
 
 	var events = JSON.parse(localStorage.getItem('events'));
+	if (events == null)
+		return false
 	events.forEach(function(event){
 		$('#calendar').fullCalendar('renderEvent', event, true);
 	})
