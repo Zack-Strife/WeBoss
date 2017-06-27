@@ -65,7 +65,7 @@ $(document).ready(function() {
 	$('#calendar').fullCalendar('renderEvent', event, true);*/
 
 	$('#add').click(function(){
-		var date = $("#datetimepicker1").datetimepicker("getDate");
+		var date = $("#datetimepicker1").data("DateTimePicker").date();
 		
 		var event={id:Date.now() ,title: $('#event').val(), start: date, location: location};
 
