@@ -85,7 +85,7 @@ However, delay the fade out process for 2.5 seconds */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-
+}
 .item{
     text-align:center;
 }
