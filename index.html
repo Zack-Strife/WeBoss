@@ -8,25 +8,29 @@
 	<title>WeBoss</title>
 </head>
 <body>
-	<div class="row">
-		<div class="col-xs-4 col-md-12 ">
-			<h2 class="title"> WeBoss</h2>
+	<div class="body-container">
+		<div class="row">
+			<div class="col-xs-4 col-md-12">
+				<h2 class="title"> WeBoss</h2>
+			</div>
 		</div>
-		<container class="col-xs-4 col-md-2 col-md-offset-5 col-xs-offset-4">
-			<form action="./map.html" method="post" id="myForm">
-				<div class="form-group">
-					<label for="pseudo">Pseudo</label>
-					<input class="form-control" type="text" id="pseudo" name="pseudo" required></input>
-				</div>
-				<div class="form-group">
-					<label for="password">Password</label>
-					<input class="form-control" type="text" id="password" name="password" required/>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary btn-block">Login</button>
-				</div>
-			</form>
-		</container>
+		<div class="row">
+			<container class="col-xs-4 col-md-2 col-md-offset-5 col-xs-offset-4">
+				<form action="./map.html" method="post" id="myForm">
+					<div class="form-group">
+						<label for="pseudo">Pseudo</label>
+						<input class="form-control" type="text" id="pseudo" name="pseudo" required></input>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input class="form-control" type="text" id="password" name="password" required/>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block">Login</button>
+					</div>
+				</form>
+			</container>
+		</div>
 	</div>
 	<div id="snackbar">Invalid creditentials</div>
 </body>
