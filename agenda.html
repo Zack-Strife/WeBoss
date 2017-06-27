@@ -1,16 +1,18 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./dependencies/bootstrap.min.css">
+	<script src='./dependencies/moment.min.js'></script>
 	<script type="text/javascript" src="./dependencies/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./dependencies/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="./dependencies/bootstrap.min.js"></script>
 	<link rel='stylesheet' href='./dependencies/jquery-ui.min.css' />
+	<script type="text/javascript" src="./dependencies/bootstrap.min.js"></script>
 	<link rel='stylesheet' href='./dependencies/fullcalendar.css' />
-	<script src='./dependencies/moment.min.js'></script>
 	<script src='./dependencies/fullcalendar.js'></script>
-	<link rel="stylesheet" href="./dependencies/bootstrap.min.css">
-	
+	<link rel="stylesheet" href="./dependencies/bootstrap-datetimepicker.min.js">
+	<script type="text/javascript" src="./dependencies/bootstrap-datetimepicker.min.js"></script>
 	<link rel="stylesheet" href="weboss.css">
+
 	<title>WeBoss Agenda</title>
 </head>
 <body>
@@ -22,8 +24,17 @@
 		<container class="col-xs-12 col-md-8 col-md-offset-2">
 			<div class="form-inline">
 				<input type="text" class="form-control" name="event" id="event" placeholder="Adresse"/>
-				<input type="text" class="form-control" id="datepicker" placeholder="Date"/>
-				<input type="text" class="form-control" id="time" placeholder="Heure"/>
+				 <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <script type="text/javascript">
+				    $(function () {
+				        $('#datetimepicker1').datetimepicker();
+				    });
+				</script>
 				<button class="btn btn-primary" id="add">Ajouter</button>
 			</div>
 			<div id='calendar'></div>
