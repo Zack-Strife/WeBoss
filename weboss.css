@@ -5,6 +5,15 @@
 	display: block;
 	margin: auto;
 }
+.body-container {
+	max-width: 80%;
+	margin: auto;
+}
+body {
+	background-image: url('./pictures/vw_bus.jpg');
+	background-size: cover;
+	max-width: 100%;
+}
 
 #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
