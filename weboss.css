@@ -1,3 +1,7 @@
+body{
+    overflow-x:hidden;
+}
+
 .title {
 	text-align: center;
 }
@@ -81,4 +85,37 @@ However, delay the fade out process for 2.5 seconds */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+
+.item{
+    text-align:center;
+}
+
+ul{
+    display:block;
+    margin:auto;
+    padding:0;
+    text-align:center;
+}
+
+li{
+    display:inline-block;
+}
+
+.link{
+    width:100px;
+    height:100px;
+    background:#e6e6e6;
+    display:inline-block;
+    line-height: 100px;
+    text-align:center;
+    margin:5px;
+}
+a {
+    color:unset;
+  text-decoration: none; /* no underline */
+}
+
+a:hover{
+    color:unset;
+    text-decoration: none; /* no underline */
 }
