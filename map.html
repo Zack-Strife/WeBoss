@@ -26,6 +26,11 @@
         var bloomington = {location:{lat: 39.1652778, lng: -86.5263889}};
         var indianapolis = {lat: 39.79, lng: -86.14};
 
+        /*var events = JSON.parse(localStorage.getItem('events'));
+		events.forEach(function(event){
+			$('#calendar').fullCalendar('renderEvent', event, true);
+		})*/
+
         var map = new google.maps.Map(document.getElementById('map'), {
           center: stlouis,
           scrollwheel: false,

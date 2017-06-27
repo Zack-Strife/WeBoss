@@ -21,7 +21,7 @@
 
 		<container class="col-xs-12 col-md-8 col-md-offset-2">
 			<div class="form-inline">
-				<input type="text" class="form-control" name="event" id="event" placeholder="Nom de l'évènement"/>
+				<input type="text" class="form-control" name="event" id="event" placeholder="Adresse"/>
 				<input type="text" class="form-control" id="datepicker" placeholder="Date"/>
 				<input type="text" class="form-control" id="time" placeholder="Heure"/>
 				<button class="btn btn-primary" id="add">Ajouter</button>
@@ -34,6 +34,8 @@
 
 <script>	
 $(document).ready(function() {
+	var location = null;
+	var autocomplete = null;
 
     // page is now ready, initialize the calendar...
 
@@ -44,6 +46,8 @@ $(document).ready(function() {
 		editable: true
     })
 
+    updateCalendar();
+
     /*var event={id:1 , title: 'Julien', start:  new Date()};
 
 	$('#calendar').fullCalendar('renderEvent', event, true);*/
@@ -53,9 +57,37 @@ $(document).ready(function() {
 		date.setHours($('#time').val().split(':')[0]);
 		date.setMinutes($('#time').val().split(':')[1]);
 		
-		var event={id:Date.now() , title: $('#event').val(), start:  date};
+		var event={id:Date.now() ,title: $('#event').val(), start: date, location: location};
 
-		$('#calendar').fullCalendar('renderEvent', event, true);
+		var events = JSON.parse(localStorage.getItem('events'));
+		if (events == null){
+			events = [];
+		}
+		events.push(event);
+		localStorage.setItem('events', JSON.stringify(events));
+
+		updateCalendar();
 	});
+
+	autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('event')),
+            {types: ['geocode']});
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete.addListener('place_changed', function(){
+		var place = autocomplete.getPlace();
+		location = place.geometry.location;
+    });
 });
+
+function updateCalendar(){
+	$('#calendar').fullCalendar('removeEvents');
+
+	var events = JSON.parse(localStorage.getItem('events'));
+	events.forEach(function(event){
+		$('#calendar').fullCalendar('renderEvent', event, true);
+	})
+}
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCbTdWN0Pe_ji5cWugNvDblRlregC_MSE&libraries=places"></script>
