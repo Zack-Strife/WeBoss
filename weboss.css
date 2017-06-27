@@ -10,13 +10,11 @@ body{
 	margin: auto;
 }
 .body-container {
-	max-width: 80%;
 	margin: auto;
 }
 body {
 	background-image: url('./pictures/vw_bus.jpg');
 	background-size: cover;
-	max-width: 100%;
 }
 .submit {
 	text-align: center;
