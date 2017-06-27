@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="./dependencies/bootstrap.min.js"></script>
 	<link rel='stylesheet' href='./dependencies/fullcalendar.css' />
 	<script src='./dependencies/fullcalendar.js'></script>
-	<link rel="stylesheet" href="./dependencies/bootstrap-datetimepicker.min.js">
+	<link rel="stylesheet" href="./dependencies/bootstrap-datetimepicker.min.css">
 	<script type="text/javascript" src="./dependencies/bootstrap-datetimepicker.min.js"></script>
 	<link rel="stylesheet" href="weboss.css">
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     // page is now ready, initialize the calendar...
 
-    $('#datepicker').datepicker();
+    //$('#datetimepicker1').datepicker();
 
     $('#calendar').fullCalendar({
 		defaultView: 'basicWeek',
@@ -64,9 +64,7 @@ $(document).ready(function() {
 	$('#calendar').fullCalendar('renderEvent', event, true);*/
 
 	$('#add').click(function(){
-		var date = $('#datepicker').datepicker('getDate');
-		date.setHours($('#time').val().split(':')[0]);
-		date.setMinutes($('#time').val().split(':')[1]);
+		var date = $("#datetimepicker1").data("DateTimePicker").date()
 		
 		var event={id:Date.now() ,title: $('#event').val(), start: date, location: location};
 
