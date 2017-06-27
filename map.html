@@ -28,29 +28,32 @@
 
         var events = JSON.parse(localStorage.getItem('events'));
 
-        var now = new Date();
+        var origin = null;
+        var destination = null;
+    	var waypoints = [];
+        if (events != null){
+        	var now = new Date();
         // On ne garde que les évènements du jour
 		events.filter(function(item){
-
 			return now.getHours() == new Date(item.start).getHours()
 				&& now.getMonth() == new Date(item.start).getMonth()
 				&& now.getYear() == new Date(item.start).getYear()
-		})
+			})
 
-		// On met les évènements dans l'ordre
-		events.sort(function(a,b){
-		  	return new Date(b.start) < new Date(a.start);
-		});
+			// On met les évènements dans l'ordre
+			events.sort(function(a,b){
+			  	return new Date(b.start) < new Date(a.start);
+			});
 
-		var origin = events[0].location;
-		var destination = events[events.length - 1].location;
-		events.splice(0, 1);
-		events.splice()
+			origin = events[0].location;
+			destination = events[events.length - 1].location;
+			events.splice(0, 1);
+			events.splice()
 
-		var waypoints = [];
-		events.forEach(function(event){
-			waypoints.push({location: event.location})
-		})
+			events.forEach(function(event){
+				waypoints.push({location: event.location})
+			})
+        }
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: stlouis,
