@@ -1,5 +1,53 @@
+/* Dégradé gauche 22b573 */
+/* Dégradé droit 0fa5ae */
+/* Button simple 46c18a */
+
+@font-face {
+  font-family: "Henderson";
+  src: url("./fonts/Henderson-Sans-Basic-Thin.otf");
+}
+
+.form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+    opacity:  1;
+}
+.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+    opacity:  1;
+}
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #fff;
+}
+
+.gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#22b573+0,0fa5ae+100 */
+	background: #22b573; /* Old browsers */
+	background: -moz-linear-gradient(left, #22b573 0%, #0fa5ae 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #22b573 0%,#0fa5ae 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #22b573 0%,#0fa5ae 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#22b573', endColorstr='#0fa5ae',GradientType=1 ); /* IE6-9 */
+	color:white;
+	border:none;
+}
+
 body{
     overflow-x:hidden;
+	color:white;
+	font-family: "Henderson";
+}
+
+input {
+	color: white;
+}
+
+.we-button{
+	background-color:#46c18a;
+	color:white;
+	text-align:center;
+	border:none;
 }
 
 .title {
@@ -13,7 +61,7 @@ body{
 	margin: auto;
 }
 body {
-	background-image: url('./pictures/vw_bus.jpg');
+	background-image: url('./pictures/background.png');
 	background-size: cover;
 }
 .submit {
