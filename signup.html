@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="./dependencies/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./dependencies/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./dependencies/validator.js"></script>
+	<link rel="stylesheet" href="./dependencies/bootstrap.min.css">
+	<link rel="stylesheet" href="weboss.css">
+	<title>Inscription WeBoss</title>
+</head>
+<body>
+	<div class="body-container">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<h2 class="title">Inscription</h2>
+			</div>
+		</div>
+		<div class="row">
+			<container class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+				<form action="#" method="post" role="form" data-toggle="validator" id="myForm">
+					<div class="form-group">
+						<label for="pseudo">Pseudo</label>
+						<input class="form-control" type="text" id="pseudo" name="pseudo" required></input>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword">Password</label>
+						<input type="password" class="form-control" type="text" name="password" minlength="6" id="inputPassword" required/>
+						 <div class="help-block">Minimum of 6 characters</div>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword">Confirm your password</label>
+						<input type="password" class="form-control" type="text" id="confirmPassword" name="password" minlength="6" data-match="#inputPassword" data-match-error="Les mots de passes ne sont pas les mêmes !"  required/>
+						 <div class="help-block"></div>						
+					</div>
+					<div class="form-group submit">
+						<div class="loader" id="loader" style="display:none"></div>
+						<button type="submit" id="signupButton" class="btn btn-primary btn-block">Login</button>
+						<div class="alert alert-success" id="successMessage" style="display:none">Vous avez bien été inscrit !</div>
+					</div>
+				</form>
+			</container>
+		</div>
+	</div>
+	<div id="snackbar">Invalid creditentials</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready( function() {
+		$('#myForm').validator().on('submit', function (e) {
+		  if (e.isDefaultPrevented()) {
+		  	console.log('error');
+		    // handle the invalid form...
+		  } else {
+		  	e.preventDefault();
+			$("#loader").show();
+	     	$("#signupButton").hide();
+	    	setTimeout(function(){
+		    	$("#loader").hide();
+		    	$("#successMessage").show(); 
+	    	}, 3000);
+	    	setTimeout(function(){
+		   		window.location.href = "./dependencies/menu.html";
+	    	}, 5000);
+		  }
+		});
+	});
+</script>
