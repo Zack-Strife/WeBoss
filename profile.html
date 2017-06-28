@@ -24,37 +24,44 @@
 	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
-	<div class="row">
+	<div class="row" style="height:90%">
 		<div class="col-xs-3">
             <a href="./menu.html"><img style="margin-top:18px;margin-left:25px" src="./pictures/back.png" height="25px"/></a>
         </div>
 		<div class="col-xs-6">
-			<a href="./menu.html"><h2 class="title">MY CALENDAR</h2></a>
+			<a href="./menu.html"><h2 class="title">PROFILE</h2></a>
 		</div>
         <div class="col-xs-3">
             <a href="./params.html"><img style="margin-top:10px;margin-left:5px" width="40px" src="./pictures/params.png"/></a>
         </div>
-		<container class="col-xs-12 col-md-8 col-md-offset-2">
-			<div class="action-bar gradient">
-				<a class="add" href="./newEvent.html">+</a>
-			</div>
-	<!-- 		<div class="form-inline">
-				<input type="text" class="form-control we-button" name="event" id="event" placeholder="Adresse"/>
-			 	<div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control we-button" />
-                    <span class="input-group-addon gradient">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-                <script type="text/javascript">
-				    $(function () {
-				        $('#datetimepicker1').datetimepicker();
-				    });
-				</script>
-				<button class="btn btn-primary btn-block gradient" id="add">Ajouter</button>
-			</div>  -->
-			<div id='calendar'></div>
+		<container style="text-align:center" class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-6 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+			<br />
+			<img width="100px" src="./pictures/profile.png" style="margin:auto;display:block"/>
+			<h5 class="green-title">MATHIEU ARSON</h5>
+			<h6>CHANGE PROFILE PICTURE</h6>
+			<br />
+			<h4 class="green-title">DRIVER PROFILE</h4>
+			<br />
+			<img src="./pictures/car1.png" width="80px"/>
+			<h5 class="green-title">WB0409</h5>
 		</container>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 loader-div">
+				<div class="loader-container">
+				<div class="rectangle-1"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-6"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-1"></div>
+			</div>	
+		</div>
 	</div>
 </body>
 </html>
@@ -69,7 +76,7 @@ $(document).ready(function() {
     //$('#datetimepicker1').datepicker();
 
     $('#calendar').fullCalendar({
-		defaultView: 'basicDay',
+		defaultView: 'basicWeek',
 		editable: false
     })
 
@@ -80,18 +87,30 @@ $(document).ready(function() {
 	$('#calendar').fullCalendar('renderEvent', event, true);*/
 
 	$('#add').click(function(){
-		var date = $("#datetimepicker1").data("DateTimePicker").date();
+		var startDate = $("#datetimepicker1").data("DateTimePicker").date();
+		var finishDate = $("#datetimepicker2").data("DateTimePicker").date();
 		
-		var event={id:Date.now() ,title: $('#event').val(), start: date, location: location};
-
+		if (startDate !== null) { 
+			var event={id:Date.now() ,title: $('#title').val(), start: startDate, location: location};	
+		}
+		if (finishDate !== null) {
+			var finishEvent={id:Date.now() ,title: $('#title').val(), start: finishDate, location: location};
+		}
 		var events = JSON.parse(localStorage.getItem('events'));
 		if (events == null){
 			events = [];
 		}
-		events.push(event);
+		if (event !== undefined) {
+				events.push(event);
+				if (finishEvent !== undefined) {
+					events.push(finishEvent);
+				}
+		}
 		localStorage.setItem('events', JSON.stringify(events));
 
 		updateCalendar();
+
+		window.location = './menu.html';
 	});
 
 	autocomplete = new google.maps.places.Autocomplete(

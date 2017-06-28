@@ -82,6 +82,7 @@ input {
 }
 
 .title {
+    font-size:1.1em;
 	text-align: center;
 }
 .iframe {
@@ -205,6 +206,10 @@ a:hover{
 .table-condensed {
 	color: black;
 	font-size: 11px;
+}
+
+.green-title{
+	color:#2dfb8e;
 }
 
 .title{
