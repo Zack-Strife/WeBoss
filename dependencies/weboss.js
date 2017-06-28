@@ -76,7 +76,7 @@ $(document).ready(function(){
             headers: {
                 "Authorization": "Bearer " + accessToken
             },
-            data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+            data: JSON.stringify({ query: text, lang: "fr", sessionId: Date.now() }),
             success: function(data) {
                 setResponse(JSON.stringify(data, undefined, 2));
             },
