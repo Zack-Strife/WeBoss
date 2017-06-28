@@ -181,3 +181,135 @@ a:hover{
 	color: black;
 	font-size: 11px;
 }
+
+#sample{}
+
+.loader-container {
+    position:absolute;
+    bottom: 50px;
+    left: 33%;
+	height: 10px;
+	width: 33%;
+	margin: auto;
+    text-align:center;
+}
+
+.loader-container > div {
+	position: relative;
+	display: inline-block;
+	background: #22b573;
+	height: 100%;
+	width: 5px;
+	margin: 0;
+	-webkit-animation: load 3s ease-in-out infinite;
+	animation: load 3s ease-in-out infinite;
+}
+
+.loader-container .rectangle-2 {
+	-webkit-animation-delay: 0.1s;
+	animation-delay: 0.1s;
+}
+
+.loader-container .rectangle-3 {
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+
+.loader-container .rectangle-4 {
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+
+.loader-container .rectangle-5 {
+	-webkit-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+}
+
+.loader-container .rectangle-6 {
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+@-moz-keyframes load {
+	0%,
+	100% {
+		-moz-transform: scaleY(1);
+		background: #22b573;
+	}
+	16.67% {
+		-moz-transform: scaleY(3);
+		background: #0fa5ae;
+	}
+	33.33% {
+		-moz-transform: scaleY(1);
+		background: #46c18a;
+	}
+	50% {
+		-moz-transform: scaleY(3);
+		background: #22b573;
+	}
+	66.67% {
+		-moz-transform: scaleY(1);
+		background: #0fa5ae;
+	}
+	83.34% {
+		-moz-transform: scaleY(3);
+		background: #46c18a;
+	}
+} 
+
+@-webkit-keyframes load {
+	0%,
+	100% {
+		-webkit-transform: scaleY(1);
+		background: #22b573;
+	}
+	16.67% {
+		-webkit-transform: scaleY(3);
+		background: #0fa5ae;
+	}
+	33.33% {
+		-webkit-transform: scaleY(1);
+		background: #46c18a;
+	}
+	50% {
+		-webkit-transform: scaleY(3);
+		background: #22b573;
+	}
+	66.67% {
+		-webkit-transform: scaleY(1);
+		background: #0fa5ae;
+	}
+	83.34% {
+		-webkit-transform: scaleY(3);
+		background: #46c18a;
+	}
+} 
+
+@keyframes load {
+	0%,
+	100% {
+		transform: scaleY(1);
+		background: #22b573;
+	}
+	16.67% {
+		transform: scaleY(3);
+		background: #0fa5ae;
+	}
+	33.33% {
+		transform: scaleY(1);
+		background: #46c18a;
+	}
+	50% {
+		transform: scaleY(3);
+		background: #22b573;
+	}
+	66.67% {
+		transform: scaleY(1);
+		background: #0fa5ae;
+	}
+	83.34% {
+		transform: scaleY(3);
+		background: #46c18a;
+	}
+}
