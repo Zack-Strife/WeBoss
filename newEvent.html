@@ -116,13 +116,12 @@ $(document).ready(function() {
 			var finishEvent={id:Date.now() ,title: $('#title').val(), start: finishDate, location: location};
 		}
 		var events = JSON.parse(localStorage.getItem('events'));
-		console.log(events);
 		if (events == null){
 			events = [];
 		}
-		if (event !== null) {
+		if (event !== undefined) {
 				events.push(event);
-				if (finishEvent !== null) {
+				if (finishEvent !== undefined) {
 					events.push(finishEvent);
 				}
 		}
