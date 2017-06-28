@@ -28,14 +28,18 @@
 		<div class="col-xs-12 col-md-12">
 			<a href="./menu.html"><h2 class="title">WeBoss</h2></a>
 		</div>
-		<container class="col-xs-12 col-md-8 col-md-offset-2">
-			<div class="action-bar gradient">
-				<a class="add" href="./newEvent.html">+</a>
-			</div>
-	<!-- 		<div class="form-inline">
-				<input type="text" class="form-control we-button" name="event" id="event" placeholder="Adresse"/>
-			 	<div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control we-button" />
+		<container class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-6 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 agenda-form">
+			<div class="form-inline ">
+				<input type="text" class="form-control we-button agenda" name="title" id="title" placeholder="Title" onfocus="this.placeholder = ''"/>
+				<input type="text" class="form-control we-button agenda" name="event" id="event" placeholder="Address" onfocus="this.placeholder = ''"/>
+			 	<div class='input-group date agenda' id='datetimepicker1'>
+                    <input type='text' class="form-control we-button" placeholder="Starting Time" />
+                    <span class="input-group-addon gradient">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <div class='input-group date agenda' id='datetimepicker2'>
+                    <input type='text' class="form-control we-button" placeholder="Finishing Time" />
                     <span class="input-group-addon gradient">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -43,11 +47,12 @@
                 <script type="text/javascript">
 				    $(function () {
 				        $('#datetimepicker1').datetimepicker();
+				        $('#datetimepicker2').datetimepicker();
+
 				    });
 				</script>
 				<button class="btn btn-primary btn-block gradient" id="add">Ajouter</button>
-			</div>  -->
-			<div id='calendar'></div>
+			</div> 
 		</container>
 	</div>
 </body>
@@ -74,15 +79,24 @@ $(document).ready(function() {
 	$('#calendar').fullCalendar('renderEvent', event, true);*/
 
 	$('#add').click(function(){
-		var date = $("#datetimepicker1").data("DateTimePicker").date();
-		
-		var event={id:Date.now() ,title: $('#event').val(), start: date, location: location};
+		var startDate = $("#datetimepicker1").data("DateTimePicker").date();
+		var finishDate = $("#datetimepicker2").data("DateTimePicker").date();
 
+		if (startDate !== null) { 
+			var event={id:Date.now() ,title: $('#title').val(), start: startDate, location: location};	
+		}
+		if (finishDate !== null) {
+			var finishEvent={id:Date.now() ,title: $('#title').val(), start: finishDate, location: location};
+		}
 		var events = JSON.parse(localStorage.getItem('events'));
+		console.log(events);
 		if (events == null){
 			events = [];
 		}
-		events.push(event);
+		if (event !== null) {
+				events.push(event);
+			events.push(finishEvent);
+		}
 		localStorage.setItem('events', JSON.stringify(events));
 
 		updateCalendar();
