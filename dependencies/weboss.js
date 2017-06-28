@@ -68,6 +68,7 @@ $(document).ready(function(){
     }
     function send() {
         var text = $("#input").val();
+        console.log(text);
         $.ajax({
             type: "POST",
             url: baseUrl + "query?v=20150910",
@@ -78,6 +79,7 @@ $(document).ready(function(){
             },
             data: JSON.stringify({ query: text, lang: "fr", sessionId: Date.now() }),
             success: function(data) {
+                console.log(data);
                 setResponse(JSON.stringify(data, undefined, 2));
             },
             error: function() {
