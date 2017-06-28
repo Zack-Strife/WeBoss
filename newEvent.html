@@ -33,21 +33,31 @@
 				<input type="text" class="form-control we-button agenda" name="title" id="title" placeholder="Title" onfocus="this.placeholder = ''"/>
 				<input type="text" class="form-control we-button agenda" name="event" id="event" placeholder="Address" onfocus="this.placeholder = ''"/>
 			 	<div class='input-group date agenda' id='datetimepicker1'>
-                    <input type='text' class="form-control we-button" placeholder="Starting Time" />
+                    <input type='text' class="form-control we-button readonly" placeholder="Starting Time" readonly />
                     <span class="input-group-addon gradient">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
                 <div class='input-group date agenda' id='datetimepicker2'>
-                    <input type='text' class="form-control we-button" placeholder="Finishing Time" />
+                    <input type='text' class="form-control we-button readonly" placeholder="Finishing Time" readonly />
                     <span class="input-group-addon gradient">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
                 <script type="text/javascript">
 				    $(function () {
-				        $('#datetimepicker1').datetimepicker();
-				        $('#datetimepicker2').datetimepicker();
+				        $('#datetimepicker1').datetimepicker(
+					        {
+							    format: 'DD/MM/YYYY',
+							    ignoreReadonly: true,
+							    allowInputToggle: true
+							});
+				        $('#datetimepicker2').datetimepicker(
+						    {
+							    format: 'DD/MM/YYYY',
+							    ignoreReadonly: true,
+							    allowInputToggle: true
+							});
 
 				    });
 				</script>
@@ -98,7 +108,7 @@ $(document).ready(function() {
 	$('#add').click(function(){
 		var startDate = $("#datetimepicker1").data("DateTimePicker").date();
 		var finishDate = $("#datetimepicker2").data("DateTimePicker").date();
-
+		
 		if (startDate !== null) { 
 			var event={id:Date.now() ,title: $('#title').val(), start: startDate, location: location};	
 		}
