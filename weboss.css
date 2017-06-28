@@ -74,7 +74,9 @@ input {
 	text-align:center;
 	border:none;
 }
-
+.we-button.readonly {
+	background-color: #46c18a;
+}
 .we-border-button{
     border:#46c18a solid 1px;
 }
