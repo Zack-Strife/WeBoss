@@ -216,6 +216,18 @@ a:hover{
     height:5%;
 }
 
+.editable{
+	border: 1px solid white;
+	font-size: 0.6em;
+	padding:2px 5px;
+	width:100%;
+	display: block;
+}
+
+.editable img{
+	float:right;
+}
+
 .loader-div{
     display:block;
     height:10%;
