@@ -73,7 +73,7 @@
         $('#send-my-car').click(function(){
             var dateNow = new Date();
             dateNow.setTime(dateNow.getTime() + (1*60*60*1000));
-            var event={id:Date.now() ,title: 'Aller chercher Matthieu', start: dateNow, location: {lat:48.857215, lng:2.281122}};
+            var event={id:Date.now() ,title: 'Aller chercher Mathieu', start: dateNow, location: {lat:48.857215, lng:2.281122}};
 
             var events = JSON.parse(localStorage.getItem('events'));
             if (events == null){

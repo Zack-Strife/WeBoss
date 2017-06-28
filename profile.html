@@ -1,0 +1,137 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./dependencies/bootstrap.min.css">
+	<script src='./dependencies/moment.min.js'></script>
+	<script type="text/javascript" src="./dependencies/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./dependencies/jquery-ui.min.js"></script>
+	<link rel='stylesheet' href='./dependencies/jquery-ui.min.css' />
+	<script type="text/javascript" src="./dependencies/bootstrap.min.js"></script>
+	<link rel='stylesheet' href='./dependencies/fullcalendar.css' />
+	<script src='./dependencies/fullcalendar.js'></script>
+	<link rel="stylesheet" href="./dependencies/bootstrap-datetimepicker.min.css">
+	<script type="text/javascript" src="./dependencies/bootstrap-datetimepicker.min.js"></script>
+	<link rel="stylesheet" href="weboss.css">
+
+	<title>WeBoss Agenda</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+	<link rel="manifest" href="./favicons/manifest.json">
+	<link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="row" style="height:90%">
+		<div class="col-xs-3">
+            <a href="./menu.html"><img style="margin-top:18px;margin-left:25px" src="./pictures/back.png" height="25px"/></a>
+        </div>
+		<div class="col-xs-6">
+			<a href="./menu.html"><h2 class="title">PROFILE</h2></a>
+		</div>
+        <div class="col-xs-3">
+            <a href="./params.html"><img style="margin-top:10px;margin-left:5px" width="40px" src="./pictures/params.png"/></a>
+        </div>
+		<container style="text-align:center" class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-6 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+			<br />
+			<img width="100px" src="./pictures/profile.png" style="margin:auto;display:block"/>
+			<br />
+			<h4 class="green-title">MATHIEU ARSON</h3>
+			<h6>CHANGE PROFILE PICTURE</h6>
+			<br />
+			<h4 class="green-title">DRIVER PROFILE</h3>
+		</container>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 loader-div">
+				<div class="loader-container">
+				<div class="rectangle-1"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-6"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-1"></div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
+
+<script>	
+$(document).ready(function() {
+	var location = null;
+	var autocomplete = null;
+
+    // page is now ready, initialize the calendar...
+
+    //$('#datetimepicker1').datepicker();
+
+    $('#calendar').fullCalendar({
+		defaultView: 'basicWeek',
+		editable: false
+    })
+
+    updateCalendar();
+
+    /*var event={id:1 , title: 'Julien', start:  new Date()};
+
+	$('#calendar').fullCalendar('renderEvent', event, true);*/
+
+	$('#add').click(function(){
+		var startDate = $("#datetimepicker1").data("DateTimePicker").date();
+		var finishDate = $("#datetimepicker2").data("DateTimePicker").date();
+		
+		if (startDate !== null) { 
+			var event={id:Date.now() ,title: $('#title').val(), start: startDate, location: location};	
+		}
+		if (finishDate !== null) {
+			var finishEvent={id:Date.now() ,title: $('#title').val(), start: finishDate, location: location};
+		}
+		var events = JSON.parse(localStorage.getItem('events'));
+		if (events == null){
+			events = [];
+		}
+		if (event !== undefined) {
+				events.push(event);
+				if (finishEvent !== undefined) {
+					events.push(finishEvent);
+				}
+		}
+		localStorage.setItem('events', JSON.stringify(events));
+
+		updateCalendar();
+
+		window.location = './menu.html';
+	});
+
+	autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('event')),
+            {types: ['geocode']});
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete.addListener('place_changed', function(){
+		var place = autocomplete.getPlace();
+		location = place.geometry.location;
+    });
+});
+
+function updateCalendar(){
+	$('#calendar').fullCalendar('removeEvents');
+
+	var events = JSON.parse(localStorage.getItem('events'));
+	if (events == null)
+		return false
+	events.forEach(function(event){
+		$('#calendar').fullCalendar('renderEvent', event, true);
+	})
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCbTdWN0Pe_ji5cWugNvDblRlregC_MSE&libraries=places"></script>
