@@ -78,15 +78,17 @@ $(document).ready(function(){
             },
             data: JSON.stringify({ query: text, lang: "fr", sessionId: Date.now() }),
             success: function(data) {
-                setResponse(data.result.fullfillment.speech);
+                setResponse(data.result.fulfillment.speech);
             },
             error: function() {
                 setResponse("Internal Server Error");
             }
         });
-        setResponse("Loading...");
+        var x = document.getElementById("snackbar")
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
     function setResponse(val) {
-        $("#response").text(val);
+        $("#snackbar").text(val);
     }
 })

@@ -49,7 +49,7 @@ body {
 .left .menu:before {
 	content: '';
 	border-right: 10px solid rgba(28,47,37,1);
-	padding-left: 20%;
+	padding-left: 25%;
 	position: absolute;
 	height: 100vh;
 	opacity: 0;
