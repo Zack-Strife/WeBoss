@@ -11,7 +11,7 @@ $(document).ready(function(){
         $('.loader-div').hide();
     });
 
-    var accessToken = "0c95040d65bf43cc94e71b5dd31f1a2f";
+    var accessToken = "8e7fd77ba1924863acd80b41bf189694";
     var baseUrl = "https://api.api.ai/v1/";
     $(document).ready(function() {
         $("#input").keypress(function(event) {
@@ -41,7 +41,7 @@ $(document).ready(function(){
         recognition.onend = function() {
             stopRecognition();
         };
-        recognition.lang = "fr-FR";
+        recognition.lang = "en-US";
         recognition.start();
     }
 
@@ -76,7 +76,7 @@ $(document).ready(function(){
             headers: {
                 "Authorization": "Bearer " + accessToken
             },
-            data: JSON.stringify({ query: text, lang: "fr", sessionId: Date.now() }),
+            data: JSON.stringify({ query: text, lang: "en", sessionId: Date.now() }),
             success: function(data) {
                 setResponse(data.result.fulfillment.speech);
             },
