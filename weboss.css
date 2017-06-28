@@ -228,8 +228,13 @@ a:hover{
 	float:right;
 }
 
+.title-div{
+	background-color:black;
+	height:10%;
+}
+
 .loader-div{
-    display:block;
+    display:none;
     height:10%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#46c18a+0,a2f7e2+100 */
     background: #46c18a; /* Old browsers */
