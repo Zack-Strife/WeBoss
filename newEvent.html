@@ -122,7 +122,9 @@ $(document).ready(function() {
 		}
 		if (event !== null) {
 				events.push(event);
-			events.push(finishEvent);
+				if (finishEvent !== null) {
+					events.push(finishEvent);
+				}
 		}
 		localStorage.setItem('events', JSON.stringify(events));
 
