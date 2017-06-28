@@ -63,7 +63,7 @@ input {
 	margin: auto;
 }
 body {
-	background-image: url('./pictures/background.png');
+	background-image: url('./pictures/background2.png') no-repeat;
 	background-size: cover;
 }
 .submit {
