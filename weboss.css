@@ -52,6 +52,10 @@ input {
 	border:none;
 }
 
+.we-border-button{
+    border:#46c18a solid 1px;
+}
+
 .title {
 	text-align: center;
 }
@@ -63,7 +67,8 @@ input {
 	margin: auto;
 }
 body {
-	background-image: url('./pictures/background2.png') no-repeat;
+    background: no-repeat;
+	background-image: url('./pictures/background2.png');
 	background-size: cover;
 }
 .submit {
