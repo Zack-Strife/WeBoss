@@ -128,6 +128,8 @@ $(document).ready(function() {
 		localStorage.setItem('events', JSON.stringify(events));
 
 		updateCalendar();
+
+		window.location = './menu.html';
 	});
 
 	autocomplete = new google.maps.places.Autocomplete(
