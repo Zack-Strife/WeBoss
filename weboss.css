@@ -267,6 +267,10 @@ a:hover{
 
 }
 
+.darklayout{
+    height:80%;
+}
+
 .overlayout{
     height:100%;
     position:absolute;
