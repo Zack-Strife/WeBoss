@@ -48,13 +48,13 @@
 				    $(function () {
 				        $('#datetimepicker1').datetimepicker(
 					        {
-							    format: 'DD/MM/YYYY',
+							    format: 'DD/MM/YYYY H:s',
 							    ignoreReadonly: true,
 							    allowInputToggle: true
 							});
 				        $('#datetimepicker2').datetimepicker(
 						    {
-							    format: 'DD/MM/YYYY',
+							    format: 'DD/MM/YYYY H:s',
 							    ignoreReadonly: true,
 							    allowInputToggle: true
 							});
@@ -110,8 +110,6 @@ $(document).ready(function() {
 		localStorage.setItem('events', JSON.stringify(events));
 
 		updateCalendar();
-
-		window.location = './menu.html';
 	});
 
 	autocomplete = new google.maps.places.Autocomplete(
