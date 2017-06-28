@@ -34,7 +34,12 @@
 	color:white;
 	border:none;
 }
-
+.agenda-form {
+	margin-top: 15%;
+}
+.agenda {
+	margin: 5% 0;
+}
 body{
     overflow-x:hidden;
 	color:white;
@@ -44,7 +49,18 @@ body{
 input {
 	color: white;
 }
-
+.action-bar {
+	height: 5%;
+	width: 100vw;
+	background-color:#46c18a;
+}
+.add {
+	float: right;
+	font-size: 3em;
+	line-height: 0.8;
+	color: white;
+	margin-right: 2%; 
+}
 .we-button{
 	background-color:#46c18a;
 	color:white;
