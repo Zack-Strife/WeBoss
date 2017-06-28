@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="./dependencies/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./dependencies/bootstrap.min.css">
 	<link rel="stylesheet" href="weboss.css">
-	<title>WeBoss Menu</title>
+	<title>WeBoss Map</title>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
@@ -16,51 +16,193 @@
 	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
-	<div class="body-container">
-		<div class="row">
-			<div class="col-xs-12 col-md-12">
-				<a href="./menu.html"><h2 class="title">WeBoss</h2></a>
-			</div>
-		</div>
-		<!--<div class="row">
-			<div class="col-xs-6 col-xs-offset-0 col-sm-4 col-sm-offset-2 item">
-				<a href="./map.html" class="link">Itinéraire</a>
-			</div>
-			<div class="col-xs-6 col-xs-offset-0 col-sm-4 item">
-				<a href="./agenda.html" class="link">Agenda</a>
-			</div>
-		</div>
-		<br />
-		<div class="row">
-			<div class="col-xs-6 col-xs-offset-0 col-sm-4 col-sm-offset-2 item">
-				<a href="./map.html" class="link">Itinéraire</a>
-			</div>
-			<div class="col-xs-6 col-xs-offset-0 col-sm-4 item">
-				<a href="./agenda.html" class="link">Agenda</a>
-			</div>
-		</div>-->
-		<div class="row itemlist">
-			<div class="col-lg-4 col-lg-offset-4">
-				<ul>
-					<li class="">
-						<a href="./map.html" class="link">Itinéraire</a>
-					</li>
-					<li class="">
-						<a href="./agenda.html" class="link">Agenda</a>
-					</li>
-					<li class="">
-						<a href="./agenda.html" class="link">Agenda</a>
-					</li>
-					<li class="">
-						<a href="./agenda.html" class="link">Agenda</a>
-					</li>
-				</ul>
-			</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-12">
+			<a href="./menu.html"><h2 class="title">WeBoss</h2></a>
 		</div>
 	</div>
+	<div class="row">
+		<container class="col-xs-12 col-md-12">
+			<div style="margin:auto;width:100%;height:80%" id="map">
+				Vous devez être connecté à internet pour afficher la map
+			</div>
+		</container>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 loader-div">
+				<div class="loader-container">
+				<div class="rectangle-1"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-6"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-1"></div>
+			</div>	
+		</div>
+	</div>
+	<script>
+      function initMap() {
+        var stlouis = {lat: 38.627003, lng: -90.199402};
+        var bloomington = {location:{lat: 39.1652778, lng: -86.5263889}};
+        var indianapolis = {lat: 39.79, lng: -86.14};
+
+        var events = JSON.parse(localStorage.getItem('events'));
+
+        var origin = null;
+        var destination = null;
+    	var waypoints = [];
+        if (events != null){
+        	var now = new Date();
+        // On ne garde que les évènements du jour
+		events.filter(function(item){
+			return now.getHours() == new Date(item.start).getHours()
+				&& now.getMonth() == new Date(item.start).getMonth()
+				&& now.getYear() == new Date(item.start).getYear()
+			})
+
+			// On met les évènements dans l'ordre
+			events.sort(function(a,b){
+			  	return new Date(b.start) < new Date(a.start);
+			});
+
+			origin = events[0].location;
+			destination = events[events.length - 1].location;
+			events.splice(0, 1);
+			events.splice()
+
+			events.forEach(function(event){
+				waypoints.push({location: event.location})
+			})
+        }
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: stlouis,
+          scrollwheel: false,
+          zoom: 7,
+          styles: [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#b7f39a"
+            },
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": "-25"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }]
+        });
+
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+          map: map
+        });
+
+        // Set destination, origin and travel mode.
+        var request = {
+          destination: destination,
+          origin: origin,
+          waypoints: waypoints,
+          travelMode: 'DRIVING'
+        };
+
+        // Pass the directions request to the directions service.
+        var directionsService = new google.maps.DirectionsService();
+        directionsService.route(request, function(response, status) {
+          if (status == 'OK') {
+            // Display the route on the map.
+            directionsDisplay.setDirections(response);
+          }
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCbTdWN0Pe_ji5cWugNvDblRlregC_MSE&callback=initMap"></script>
 </body>
 </html>
-
-<script type="text/javascript">
-	
-</script>
