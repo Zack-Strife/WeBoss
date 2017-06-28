@@ -22,7 +22,9 @@
     color:    #fff;
 }
 
-.gradient{
+.gradient, 
+.gradient:focus,
+.gradient:active {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#22b573+0,0fa5ae+100 */
 	background: #22b573; /* Old browsers */
 	background: -moz-linear-gradient(left, #22b573 0%, #0fa5ae 100%); /* FF3.6-15 */
@@ -165,4 +167,12 @@ a {
 a:hover{
     color:unset;
     text-decoration: none; /* no underline */
+}
+
+.fc-day-header.fc-widget-header span {
+	color: black;
+}
+.table-condensed {
+	color: black;
+	font-size: 11px;
 }
