@@ -41,7 +41,7 @@ $(document).ready(function(){
         recognition.onend = function() {
             stopRecognition();
         };
-        recognition.lang = "en-US";
+        recognition.lang = "fr-FR";
         recognition.start();
     }
 
