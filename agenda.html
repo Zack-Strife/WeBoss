@@ -25,9 +25,15 @@
 </head>
 <body>
 	<div class="row">
-		<div class="col-xs-12 col-md-12">
-			<a href="./menu.html"><h2 class="title">WeBoss</h2></a>
+		<div class="col-xs-3">
+            <a href="./menu.html"><img style="margin-top:18px;margin-left:25px" src="./pictures/back.png" height="25px"/></a>
+        </div>
+		<div class="col-xs-6">
+			<a href="./menu.html"><h2 class="title">MY CALENDAR</h2></a>
 		</div>
+        <div class="col-xs-3">
+            <a href="./params.html"><img style="margin-top:10px;margin-left:5px" width="40px" src="./pictures/params.png"/></a>
+        </div>
 		<container class="col-xs-12 col-md-8 col-md-offset-2">
 			<div class="action-bar gradient">
 				<a class="add" href="./newEvent.html">+</a>
@@ -63,7 +69,7 @@ $(document).ready(function() {
     //$('#datetimepicker1').datepicker();
 
     $('#calendar').fullCalendar({
-		defaultView: 'basicWeek',
+		defaultView: 'basicDay',
 		editable: false
     })
 
