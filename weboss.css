@@ -182,15 +182,36 @@ a:hover{
 	font-size: 11px;
 }
 
-#sample{}
+.title{
+    height:5%;
+}
+
+.loader-div{
+    display:block;
+    height:10%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#46c18a+0,a2f7e2+100 */
+    background: #46c18a; /* Old browsers */
+    background: -moz-linear-gradient(top, #46c18a 0%, #a2f7e2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #46c18a 0%,#a2f7e2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #46c18a 0%,#a2f7e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46c18a', endColorstr='#a2f7e2',GradientType=0 ); /* IE6-9 */
+}
+
+.loader-sub-div{
+    display:inline-block;
+    width:100%;
+}
+
+#sample{
+
+}
 
 .loader-container {
-    position:absolute;
-    bottom: 50px;
-    left: 33%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:4vh;
 	height: 10px;
 	width: 33%;
-	margin: auto;
     text-align:center;
 }
 
