@@ -1,10 +1,22 @@
+@font-face {
+  font-family: "Henderson";
+  src: url("../fonts/Henderson-Sans-Basic-Thin.otf");
+}
+@font-face {
+  font-family: "HendersonBold";
+  src: url("../fonts/Henderson-Sans-Basic-Semi-Bold.otf");
+}
 body {
 	background: url('./pictures/background.png') no-repeat;
 	background-size: cover;
+	overflow: hidden;
+	font-family: "Henderson";
 }
+
 
 .left {
 	float: left;
+	font-family: "HendersonBold";
 }
 .left .menu {
 	list-style: none;
@@ -15,12 +27,12 @@ body {
 	color: white;
 	font-size: 2em;
 	height: 75px;
-	margin: 20% 0;
-	width: 450px;
+	margin: 10% 0;
+	width: 500px;
 	margin-left: 10%;
 }
 .left .menu li:first-child {
-	margin-bottom: 55%;
+	margin-bottom: 45%;
 	padding-top: 5%;
 	margin-top: 0;
 }
@@ -38,10 +50,10 @@ body {
 	content: 'GPS';
 }
 .left .menu li:nth-child(4):after {
-	content: 'Etat du véhicule';
+	content: 'My WeBossCar';
 }
 .left .menu:hover li:after {
-	padding-left: 30%;
+	padding-left: 24%;
 	display: inline-block;
 	opacity: 1;
 	transition: 1s;
@@ -49,7 +61,7 @@ body {
 .left .menu:before {
 	content: '';
 	border-right: 10px solid rgba(28,47,37,1);
-	padding-left: 25%;
+	padding-left: 27%;
 	position: absolute;
 	height: 100vh;
 	opacity: 0;
@@ -67,4 +79,26 @@ body {
 .left .menu li:last-child {
 	margin-bottom: 0;
 	margin-top: 0;
+}
+.mid {
+	width: 60%;
+	margin-left: 35%;
+	padding-top: 10%;
+}
+.mid .main-menu {
+	display: flex;
+	margin: auto;
+	width: 100vw;
+}
+.mid .main-menu div {
+	display: table-cell;
+	height: 200px;
+	width: 200px;
+	padding: 5%;
+	text-align: center;
+	color: white;
+}
+.mid .main-menu div span {
+	display: block;
+	width: 100px;
 }
