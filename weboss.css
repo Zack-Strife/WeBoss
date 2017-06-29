@@ -237,11 +237,6 @@ a:hover{
     display:none;
     height:10%;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#46c18a+0,a2f7e2+100 */
-    background: #46c18a; /* Old browsers */
-    background: -moz-linear-gradient(right, #46c18a 0%, #a2f7e2 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(right, #46c18a 0%,#a2f7e2 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #46c18a 0%,#a2f7e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46c18a', endColorstr='#a2f7e2',GradientType=0 ); /* IE6-9 */
 }
 
 .loader-sub-div{
@@ -300,13 +295,21 @@ a:hover{
     background:rgba(0,0,0,0.8)
 }
 
-.loader-container {
+.loader-container-static {
     margin-left:auto;
     margin-right:auto;
     margin-top:4vh;
 	height: 2vh;
-	width: 33%;
     text-align:center;
+}
+
+.loader-container-static > div {
+	position: relative;
+	display: inline-block;
+	background: #22b573;
+	height: 100%;
+	width: 5px;
+	margin: 0;
 }
 
 .loader-container > div {

@@ -17,7 +17,16 @@
 	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
-	<div class="row" style="height:90%">
+    <div class="row title-div">
+		<div class="col-xs-3">
+            <a href="./menu.html"><img style="margin-top:18px;margin-left:25px" src="./pictures/back.png" height="25px"/></a>
+        </div>
+		<div class="col-xs-6">
+            <input class="we-button" id="input" type="hidden"/>
+			<a href="./menu.html"><h2 class="title">MY CALENDAR</h2></a>
+		</div>
+	</div>
+	<div class="row" style="height:80%">
 		<container class="col-xs-12 col-md-12">
             <div class="darklayout">
                 <br />
@@ -27,28 +36,20 @@
                     <br />
                     <br />
                     <br />
-                    <a class="dark-to-greener" id="send-my-car">YOUR RIDE HAS BEEN ACCEPTED</a>
+                    <a id="send-my-car">YOUR RIDE HAS BEEN ACCEPTED</a>
                     <br />
                     <a href="./menu.html" class="green-to-greener" id="send-my-car">OK</a>
                 </div>
             </div>
 		</container>
 	</div>
-    <div class="row title-div">
+    <div class="row footer-div">
 		<div class="col-xs-3">
-            <a href="./menu.html"><img style="margin-top:18px;margin-left:25px" src="./pictures/back.png" height="25px"/></a>
+            <a href="./profile.html"><img style="margin-top:10px;margin-left:15px" src="./pictures/profile.png" width="40px"/></a>
         </div>
-		<div class="col-xs-6">
+		<div class="col-xs-6" id="rec">
             <input class="we-button" id="input" type="hidden"/>
-			<a href="./menu.html"><h2 class="title" id="rec">MY CALENDAR</h2></a>
-		</div>
-        <div class="col-xs-3">
-            <a href="./params.html"><img style="margin-top:10px;margin-left:5px" width="40px" src="./pictures/params.png"/></a>
-        </div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 loader-div">
-				<div class="loader-container">
+			<div class="loader-container-static">
 				<div class="rectangle-1"></div>
 				<div class="rectangle-2"></div>
 				<div class="rectangle-3"></div>
@@ -62,6 +63,32 @@
 				<div class="rectangle-1"></div>
 			</div>	
 		</div>
+        <div class="col-xs-3">
+            <a href="./params.html"><img style="margin-top:10px;margin-right:50px" width="40px" src="./pictures/params.png"/></a>
+        </div>
+	</div>
+	<div class="row loader-div">
+		<div class="col-xs-3">
+            <a href="./profile.html"><img style="margin-top:10px;margin-left:15px" src="./pictures/profile.png" width="40px"/></a>
+        </div>
+		<div class="col-xs-6">
+			<div class="loader-container loader-container-static">
+				<div class="rectangle-1"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-6"></div>
+				<div class="rectangle-5"></div>
+				<div class="rectangle-4"></div>
+				<div class="rectangle-3"></div>
+				<div class="rectangle-2"></div>
+				<div class="rectangle-1"></div>
+			</div>	
+		</div>
+        <div class="col-xs-3">
+            <a href="./params.html"><img style="margin-top:10px;margin-right:50px" width="40px" src="./pictures/params.png"/></a>
+        </div>
 	</div>
 	<script>
 
