@@ -452,3 +452,6 @@ a:hover {
 .draggable img{
 	pointer-events: none;
 }
+.bottom-row {
+	margin-top: 10%;
+}
