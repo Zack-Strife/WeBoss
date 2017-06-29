@@ -64,7 +64,6 @@ $(document).ready(function(){
         send();
     }
     function updateRec() {
-        console.log(recognition)
         switch (recognition){
             case null:
                 $('.footer-div').show();
