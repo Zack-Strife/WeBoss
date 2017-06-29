@@ -19,35 +19,48 @@
 	<a href="./index.html"><span class="close"> X </span></a>
 	<div class="row">
 		<div class="col-sm-12 col-xs-12 col-md-12">
+			<h2 class="big-title">
+				Choose which pc are participating at the meeting			
+			</h2>
+		</div>
+		<div class="col-sm-12 col-xs-12 col-md-12">
 			<div class="col-md-offset-1 col-md-2 screenSelection">
 				<ul class="schema col-md-6">
-					<div class="carglass-verticale">
+					<div class="carglass-verticale selectable">
 					</div>
 				</ul>
 				<ul class="schema block col-md-6 middle">
-					<div class="fenetre-verticale">
+					<div class="fenetre-verticale selectable">
 					</div>
-					<div class="fenetre-verticale">
+					<div class="fenetre-verticale selectable">
 					</div>
 				</ul>
 			</div>
 			<div class="col-md-9 screenSelection">
 				<ul class="schema col-md-3">
-					<div class="rectangle-vertical"></div>
+					<div class="rectangle-vertical selectable"></div>
 				</ul>
 				<ul class="schema block col-md-3">
-					<div class="rectangle top-left"></div>
-					<div class="rectangle bot-left"></div>
+					<div class="rectangle top-left selectable"></div>
+					<div class="rectangle bot-left selectable"></div>
 				</ul>
 				<ul class="schema block col-md-3">
-					<div class="rectangle top-right"></div>
-					<div class="rectangle bot-right"></div>
+					<div class="rectangle top-right selectable"></div>
+					<div class="rectangle bot-right selectable"></div>
 				</ul>
 			</div>
+		</div>
+		<div class="col-sm-4 col-xs-4 col-md-4 col-sm-offset-5">
+			<a href="./index.html">
+				<button type="button" class="validation">	Confirm</button>
+			</a>
 		</div>
 	</div>
 </body>
 </html>
 
 <script type="text/javascript">
+	$('.selectable').click(function () {
+    	$(this).toggleClass('active');
+	});
 </script>
