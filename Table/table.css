@@ -442,3 +442,10 @@ However, delay the fade out process for 2.5 seconds */
 a:hover {
 	text-decoration: none;
 }
+.draggable{
+	position:absolute;
+	z-index:99999999;
+}
+.draggable img{
+	pointer-events: none;
+}
