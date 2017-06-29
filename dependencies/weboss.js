@@ -106,6 +106,8 @@ $(document).ready(function(){
         $("#snackbar").text(val);
 
         var utterThis = new SpeechSynthesisUtterance(val);
+        voices = synth.getVoices();
+        utterThis.voice = voices[0];
         synth.speak(utterThis);
     }
 })
