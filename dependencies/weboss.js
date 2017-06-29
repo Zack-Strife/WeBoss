@@ -65,11 +65,11 @@ $(document).ready(function(){
     }
     function updateRec() {
         switch (recognition){
-            case "Stop":
+            case "Speak":
                 $('.footer-div').show();
                 $('.loader-div').hide();
                 break;
-            case "Speak":
+            case "Stop":
                 $('.footer-div').hide();
                 $('.loader-div').show();
                 break;
