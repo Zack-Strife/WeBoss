@@ -1,8 +1,4 @@
 $(document).ready(function(){
-    $( function() {
-        $( ".draggable" ).draggable();
-    } );
-
     $('.loader-container-static').click(function(e){
         e.preventDefault();
 

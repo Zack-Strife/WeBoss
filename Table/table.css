@@ -443,8 +443,11 @@ a:hover {
 	text-decoration: none;
 }
 .draggable{
+	display:none;
 	position:absolute;
 	z-index:99999999;
+	bottom:0;
+	left:0;
 }
 .draggable img{
 	pointer-events: none;
