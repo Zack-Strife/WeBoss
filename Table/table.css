@@ -102,3 +102,11 @@ body {
 	display: block;
 	width: 100px;
 }
+.share-screen {
+	position: fixed;
+	bottom: 30px;
+	right: 50px;
+	width: 117px;
+	height: 94px;
+	background: url('./pictures/shareScreen.png');
+}

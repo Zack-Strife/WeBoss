@@ -64,12 +64,13 @@ $(document).ready(function(){
         send();
     }
     function updateRec() {
+        console.log(recognition)
         switch (recognition){
-            case "Stop":
+            case null:
                 $('.footer-div').show();
                 $('.loader-div').hide();
                 break;
-            case "Speak":
+            case true:
                 $('.footer-div').hide();
                 $('.loader-div').show();
                 break;
@@ -95,10 +96,10 @@ $(document).ready(function(){
         });
         var x = document.getElementById("snackbar")
         x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
     function setResponse(val) {
-        if ('' != val){
+        if ('' === val){
             val = 'I didn\'t understand what you said';
         }
         $("#snackbar").text(val);
