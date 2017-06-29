@@ -200,7 +200,7 @@ body {
 }
 .screenSelection:last-child {
 	margin-top: 15vh;
-
+}
 
 #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
