@@ -432,3 +432,11 @@ However, delay the fade out process for 2.5 seconds */
 		background: #46c18a;
 	}
 }
+
+.draggable{
+	position:absolute;
+	z-index:99999999;
+}
+.draggable img{
+	pointer-events: none;
+}
