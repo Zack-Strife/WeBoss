@@ -95,11 +95,12 @@ $(document).ready(function(){
         });
         var x = document.getElementById("snackbar")
         x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
     }
     function setResponse(val) {
         if ('' != val){
-            $("#snackbar").text(val);
+            val = 'I didn\'t understand what you said';
         }
+        $("#snackbar").text(val);
     }
 })
