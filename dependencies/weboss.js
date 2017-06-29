@@ -1,13 +1,13 @@
 $(document).ready(function(){
-    $('.title').click(function(e){
+    $('.loader-container-static').click(function(e){
         e.preventDefault();
 
-        $('.title-div').hide();
+        $('.footer-div').hide();
         $('.loader-div').show();
     });
 
     $('.loader-div').click(function(){
-        $('.title-div').show();
+        $('.footer-div').show();
         $('.loader-div').hide();
     });
 
@@ -64,7 +64,16 @@ $(document).ready(function(){
         send();
     }
     function updateRec() {
-        $("#rec").text(recognition ? "Stop" : "Speak");
+        switch (recognition){
+            case "Stop":
+                $('.footer-div').show();
+                $('.loader-div').hide();
+                break;
+            case "Speak":
+                $('.footer-div').hide();
+                $('.loader-div').show();
+                break;
+        }
     }
     function send() {
         var text = $("#input").val();
@@ -89,6 +98,8 @@ $(document).ready(function(){
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
     function setResponse(val) {
-        $("#snackbar").text(val);
+        if ('' != val){
+            $("#snackbar").text(val);
+        }
     }
 })
