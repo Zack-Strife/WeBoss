@@ -81,7 +81,7 @@ body {
 	margin-top: 0;
 }
 .mid {
-	width: 60%;
+	width: 45%;
 	margin-left: 35%;
 	padding-top: 10%;
 }
@@ -109,4 +109,25 @@ body {
 	width: 117px;
 	height: 94px;
 	background: url('./pictures/shareScreen.png');
+}
+.mid.bottom a {
+	padding: 0 3%;
+}
+.mid.bottom {
+	padding-top: 5%;
+}
+.mid.bottom .container {
+	width: 100%;
+	text-align: center;
+}
+.circle.active {
+	background: white;
+}
+.circle {
+  width: 20px;
+  height: 20px;  
+  border: 2px solid #777;
+  border-radius: 100%;
+  background: black;
+  display: inline-block;
 }
