@@ -280,6 +280,12 @@ a:hover{
     text-align:center;
 }
 
+.footer-div, .loader-div{
+	padding-top:10px;
+	background:black;
+	height:10%;
+}
+
 #sample{
 
 }
