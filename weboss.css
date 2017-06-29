@@ -61,7 +61,7 @@ input {
 	color: white;
 }
 .action-bar {
-	height: 5%;
+	height: 7%;
 	width: 100vw;
 	background-color:#46c18a;
 }
@@ -72,8 +72,8 @@ input {
 	color: white;
 	margin-right: 2%; 
 }
-.we-button{
-	background-color:#46c18a;
+.we-button, .fc-button{
+	background:#46c18a;
 	color:white;
 	text-align:center;
 	border:none;
@@ -237,22 +237,11 @@ a:hover{
 	height:10%;
 }
 
-.loader-div{
-    display:none;
-    height:10%;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#46c18a+0,a2f7e2+100 */
-}
-
-.loader-sub-div{
-    display:inline-block;
-    width:100%;
-}
-
 .center{
     text-align:center;
 }
 
-.green-to-greener{
+.green-to-greener, .fc-event{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#46c18a+0,a2f7e2+100 */
     background: #46c18a; /* Old browsers */
     background: -moz-linear-gradient(right, #70a399 0%, #46c18a 100%); /* FF3.6-15 */
@@ -266,6 +255,7 @@ a:hover{
     display:block;
     margin:auto;
     text-align:center;
+	border:none;
 }
 
 .dark-to-greener{
@@ -440,4 +430,42 @@ a:hover{
 		transform: scaleY(3);
 		background: #46c18a;
 	}
+}
+
+.fc-button{
+	margin-top: 5px!important;
+}
+
+.fc-left{
+	margin-top: 18px;
+    margin-left: 6px;
+}
+
+.fc-left h2{
+	font-size: 1.2em;
+}
+
+.fc-bg{
+	background:rgba(0,0,0,0);
+}
+
+.fc-unthemed tbody{
+	border:none;
+}
+
+.fc td{
+	border:none;
+	background-color:rgba(0,0,0,0);
+}
+
+.fc-day-header.fc-widget-header span{
+	color:white;
+}
+
+.fc-unthemed td.fc-today{
+	background-color:rgba(0,0,0,0);
+}
+.fc-view-container{
+	position:relative;
+	height:80%;
 }
