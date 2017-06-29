@@ -110,4 +110,8 @@ $(document).ready(function(){
         utterThis.voice = voices[0];
         synth.speak(utterThis);
     }
+var x = document.getElementById("snackbar")
+x.className = "show";
+    setResponse('aaaa')
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 })

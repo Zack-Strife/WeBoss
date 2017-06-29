@@ -2,6 +2,10 @@
 /* Dégradé droit 0fa5ae */
 /* Button simple 46c18a */
 
+#snackbar{
+	z-index:9999999!important;
+}
+
 body, html{
     max-width:100%!important;
     height:100%!important;
