@@ -131,3 +131,73 @@ body {
   background: black;
   display: inline-block;
 }
+.shareScreenBg {
+	background: black;
+}
+.close {
+	color: white;
+	font-size: 7em;
+	top: 0;
+	right: 0;
+}
+.close:hover {
+	color: white;
+}
+.schema {
+	padding: 0;
+	margin: 0;
+}
+.schema.block {
+	display: flow-root;
+}
+.schema.block.middle {
+	margin-top: 5vh;
+}
+.schema.front {
+	display: flex;
+}
+.rectangle-vertical {
+	height: 400px;
+	width: 100%;
+	border: 2px solid white;
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+.carglass-verticale {
+	height: 700px;
+	width: 50%;
+	border: 2px solid white;
+	border-radius: 5%;
+}
+.fenetre-verticale {
+	height: 300px;
+	width: 50%;
+	border: 2px solid white;
+	border-radius: 5%;
+	padding-bottom: 2%;
+}
+.rectangle {
+	height: 200px;
+	width: 100%;
+	border: 2px solid white;
+}
+.top-left {
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+.top-right {
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+}
+.bot-left {
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+.bot-right {
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-left: 1px solid rgba(255,255,255,0.2);
+}
+.screenSelection:last-child {
+	margin-top: 15vh;
+}
