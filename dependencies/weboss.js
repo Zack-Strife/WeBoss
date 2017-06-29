@@ -65,11 +65,11 @@ $(document).ready(function(){
     }
     function updateRec() {
         switch (recognition){
-            case true:
+            case null:
                 $('.footer-div').show();
                 $('.loader-div').hide();
                 break;
-            case null:
+            case true:
                 $('.footer-div').hide();
                 $('.loader-div').show();
                 break;
@@ -95,10 +95,14 @@ $(document).ready(function(){
         });
         var x = document.getElementById("snackbar")
         x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
     function setResponse(val) {
+<<<<<<< HEAD
         if ('' == val){
+=======
+        if ('' === val){
+>>>>>>> bc80ef3e6079531a33f58005082ef32851369385
             val = 'I didn\'t understand what you said';
         }
         $("#snackbar").text(val);
