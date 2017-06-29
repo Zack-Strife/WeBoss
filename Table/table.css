@@ -201,7 +201,24 @@ body {
 .screenSelection:last-child {
 	margin-top: 15vh;
 }
-
+.selectable:hover {
+	background: #0d462d;
+}
+.selectable.active {
+	background: #0d462d;
+}
+.validation {
+	background: #22b573;
+	border-radius: 1px;
+	color: white;
+	width: 250px;
+	height: 50px;
+	border: none;
+}
+.big-title {
+	color: white;
+	text-align: center;
+}
 #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
