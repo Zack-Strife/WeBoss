@@ -98,11 +98,7 @@ $(document).ready(function(){
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
     function setResponse(val) {
-<<<<<<< HEAD
-        if ('' == val){
-=======
         if ('' === val){
->>>>>>> bc80ef3e6079531a33f58005082ef32851369385
             val = 'I didn\'t understand what you said';
         }
         $("#snackbar").text(val);
