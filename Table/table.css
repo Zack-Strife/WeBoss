@@ -43,6 +43,9 @@ body {
 	opacity: 0;
 	transition: 1s;
 }
+.left .menu li.piloting:after {
+	content: 'Driving';
+}
 .left .menu li:nth-child(2):after {
 	content: 'Notifications';
 }
@@ -51,6 +54,9 @@ body {
 }
 .left .menu li:nth-child(4):after {
 	content: 'My WeBossCar';
+}
+.left .menu li:nth-child(5):after {
+	content: 'Road Camera';
 }
 .left .menu:hover li:after {
 	padding-left: 24%;
@@ -66,6 +72,7 @@ body {
 	height: 100vh;
 	opacity: 0;
 	transition: 1s;
+	z-index: -1;
 }
 .left .menu:hover:before {
 	content: '';
@@ -431,4 +438,7 @@ However, delay the fade out process for 2.5 seconds */
 		transform: scaleY(3);
 		background: #46c18a;
 	}
+}
+a:hover {
+	text-decoration: none;
 }
