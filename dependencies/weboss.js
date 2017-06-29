@@ -65,11 +65,11 @@ $(document).ready(function(){
     }
     function updateRec() {
         switch (recognition){
-            case "Speak":
+            case true:
                 $('.footer-div').show();
                 $('.loader-div').hide();
                 break;
-            case "Stop":
+            case null:
                 $('.footer-div').hide();
                 $('.loader-div').show();
                 break;
@@ -98,7 +98,7 @@ $(document).ready(function(){
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
     }
     function setResponse(val) {
-        if ('' != val){
+        if ('' == val){
             val = 'I didn\'t understand what you said';
         }
         $("#snackbar").text(val);
