@@ -13,6 +13,8 @@ $(document).ready(function(){
 
     var accessToken = "8e7fd77ba1924863acd80b41bf189694";
     var baseUrl = "https://api.api.ai/v1/";
+    var synth = window.speechSynthesis;
+    
     $(document).ready(function() {
         $("#input").keypress(function(event) {
             if (event.which == 13) {
@@ -102,5 +104,14 @@ $(document).ready(function(){
             val = 'I didn\'t understand what you said';
         }
         $("#snackbar").text(val);
+
+        var utterThis = new SpeechSynthesisUtterance(val);
+        var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+        for(i = 0; i < voices.length ; i++) {
+            if(voices[i].name === selectedOption) {
+            utterThis.voice = voices[i];
+            }
+        }
+        synth.speak(utterThis);
     }
 })
